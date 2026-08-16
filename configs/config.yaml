@@ -1,0 +1,120 @@
+# =============================================================================
+# Patient Journey Friction Analytics (PJFA) - V1 Configuration
+#
+# Every numeric/categorical threshold used by the pipeline lives here, not
+# hard-coded in source files. Each value is traceable to a specific decision
+# made and justified during the methodology review. See DEVIATIONS_FROM_PROMPT.md
+# for the full rationale behind each one.
+# =============================================================================
+
+dataset:
+  input_path: "Hospital_log.xes"          # supplied at runtime via --input
+  case_id_key: "concept:name"             # trace-level key = patient/case id
+  activity_key: "concept:name"            # event-level key = activity name
+  timestamp_key: "time:timestamp"
+  org_group_key: "org:group"
+  section_key: "Section"
+  activity_code_key: "Activity code"
+  lifecycle_key: "lifecycle:transition"
+
+cleaning:
+  # Confirmed typo in the real BPIC 2011 export (32 events affected).
+  # Must be fixed before any grouping/aggregation on this field.
+  section_value_corrections:
+    "Sectoin 7": "Section 7"
+  # Rows missing org:group or Section (16 events, 0.01%) are dropped, not
+  # imputed - imputing clinical/administrative routing is not defensible.
+  drop_rows_missing_keys:
+    - "org:group"
+    - "Section"
+
+waiting:
+  # Waiting is computed from RAW event timestamps (NOT collapsed to day-level).
+  # Full-file inspection showed 57.9% of events carry genuine intraday time;
+  # collapsing to day-granularity was considered and rejected after that check.
+  #
+  # Gaps are computed only between consecutive CLINICAL events. An event is
+  # classified administrative (excluded as a wait-interval ENDPOINT, but never
+  # removed from the trace/dashboard) if its activity name contains any of
+  # these substrings, matching the billing/tariff patterns actually observed
+  # in the dataset (e.g. "ordertarief", "administratief tarief - eerste pol",
+  # "190101 bovenreg.toesl. a101", "190205 klasse 3b a205").
+  administrative_activity_keywords:
+    - "tarief"
+    - "toesl"
+    - "klasse"
+  # Negative gaps (timestamp goes backwards) are data anomalies. They are
+  # reported and excluded from the wait sum, never silently dropped.
+  report_negative_gaps: true
+
+rework:
+  # Rework_p = sum over activities a of log(1 + max(0, Count_p,a - 1))
+  # Log-dampened (not raw linear count) to prevent a single hyper-repeated
+  # routine lab test from dominating the score for long-treatment patients -
+  # see methodology review, point 2.
+  use_log_dampening: true
+  # "Number of executions" is explicitly NOT used as a multiplier. Full-file
+  # check showed 1.17% of events have non-1 values including negative numbers
+  # (billing credit/quantity semantics), inconsistent with a repeat-count
+  # interpretation.
+  use_number_of_executions_field: false
+
+process_discovery:
+  grouping_field: "org:group"        # NOT "Section" - rejected, see review
+  # Departments are kept individually until they cumulatively account for
+  # this fraction of all events; the remainder is collapsed into
+  # "Other department". Derived, not a hard-coded department count.
+  cumulative_coverage_threshold: 0.95
+  other_department_label: "Other department"
+  discovery_algorithm: "inductive_miner"
+  inductive_miner_noise_threshold: 0.2   # starting value, tune empirically
+
+  # Conformance / Pathway Deviation method. See src/process_mining/conformance.py
+  # for full rationale. Options:
+  #   "auto"                (default, recommended) - attempt alignment-based
+  #        conformance with variant-level caching, budget-limited by
+  #        alignment_time_budget_seconds below. If the budget runs out
+  #        before every distinct variant is aligned, ALL partial results
+  #        are discarded and the ENTIRE dataset is instead scored with
+  #        token-based replay, so every case's D_p always comes from the
+  #        same method (never a mix of alignment + replay costs).
+  #   "alignments"           - alignment-based only; RAISES (does not
+  #        silently fall back) if the time budget is exceeded. Use this
+  #        only if you specifically need to guarantee alignment-based
+  #        scoring and are prepared for the run to fail on slower hardware.
+  #   "token_based_replay"   - skip alignments entirely; fastest and safest
+  #        option on constrained/laptop hardware. Recommended if you
+  #        already know alignments won't finish in reasonable time.
+  conformance_method: "auto"
+  # Wall-clock budget (seconds) for the alignment attempt across ALL
+  # distinct variants combined, before "auto" falls back to token-based
+  # replay for the whole dataset (or "alignments" raises). Default 300s
+  # (5 minutes) is a practical laptop-friendly ceiling; on the real BPIC
+  # 2011 file, alignments were observed taking ~150s/variant on one test
+  # machine (12/914 variants in ~30 minutes), so the default budget is
+  # expected to trigger the token-based-replay fallback on similar
+  # hardware - that is the intended, documented behavior, not a bug.
+  alignment_time_budget_seconds: 300
+
+normalization:
+  method: "percentile_clip_minmax"
+  lower_percentile: 1
+  upper_percentile: 99
+  # Applied uniformly to W, R, and D raw values before min-max scaling.
+
+friction_score:
+  weight_waiting: 0.3333333333333333
+  weight_rework: 0.3333333333333333
+  weight_deviation: 0.3333333333333333
+  # Required V1 validity check (elevated from an optional Phase-2 experiment
+  # during methodology review): pairwise correlation between raw W, R, D must
+  # be computed and reported BEFORE any composite-score interpretation.
+  require_component_correlation_check: true
+
+interpretation:
+  disclaimer_short: >
+    Friction Score reflects observable process burden (waiting, repetition,
+    pathway deviation) relative to this dataset's patient cohort. It is NOT
+    a measure of patient satisfaction, distress, or care quality, and it
+    scores each case's entire recorded multi-year history, not a single
+    clinical episode.

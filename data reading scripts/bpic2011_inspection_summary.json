@@ -1,0 +1,501 @@
+{
+  "file": {
+    "path": "C:\\Users\\darsh\\Desktop\\BDA project\\Hospital_log.xes",
+    "size_bytes": 85363264,
+    "size_mb": 81.41
+  },
+  "row_counts": {
+    "trace_count_patients": 1143,
+    "event_count_total": 150291,
+    "avg_events_per_trace": 131.49
+  },
+  "schema": {
+    "trace_level_keys": [
+      "Age",
+      "Age:1",
+      "Age:2",
+      "Age:3",
+      "Age:4",
+      "Age:5",
+      "Diagnosis",
+      "Diagnosis Treatment Combination ID",
+      "Diagnosis Treatment Combination ID:1",
+      "Diagnosis Treatment Combination ID:10",
+      "Diagnosis Treatment Combination ID:11",
+      "Diagnosis Treatment Combination ID:12",
+      "Diagnosis Treatment Combination ID:13",
+      "Diagnosis Treatment Combination ID:14",
+      "Diagnosis Treatment Combination ID:15",
+      "Diagnosis Treatment Combination ID:2",
+      "Diagnosis Treatment Combination ID:3",
+      "Diagnosis Treatment Combination ID:4",
+      "Diagnosis Treatment Combination ID:5",
+      "Diagnosis Treatment Combination ID:6",
+      "Diagnosis Treatment Combination ID:7",
+      "Diagnosis Treatment Combination ID:8",
+      "Diagnosis Treatment Combination ID:9",
+      "Diagnosis code",
+      "Diagnosis code:1",
+      "Diagnosis code:10",
+      "Diagnosis code:11",
+      "Diagnosis code:12",
+      "Diagnosis code:13",
+      "Diagnosis code:14",
+      "Diagnosis code:15",
+      "Diagnosis code:2",
+      "Diagnosis code:3",
+      "Diagnosis code:4",
+      "Diagnosis code:5",
+      "Diagnosis code:6",
+      "Diagnosis code:7",
+      "Diagnosis code:8",
+      "Diagnosis code:9",
+      "Diagnosis:1",
+      "Diagnosis:10",
+      "Diagnosis:11",
+      "Diagnosis:12",
+      "Diagnosis:13",
+      "Diagnosis:14",
+      "Diagnosis:15",
+      "Diagnosis:2",
+      "Diagnosis:3",
+      "Diagnosis:4",
+      "Diagnosis:5",
+      "Diagnosis:6",
+      "Diagnosis:7",
+      "Diagnosis:8",
+      "Diagnosis:9",
+      "End date",
+      "End date:1",
+      "End date:10",
+      "End date:11",
+      "End date:12",
+      "End date:13",
+      "End date:14",
+      "End date:15",
+      "End date:2",
+      "End date:3",
+      "End date:4",
+      "End date:5",
+      "End date:6",
+      "End date:7",
+      "End date:8",
+      "End date:9",
+      "Specialism code",
+      "Specialism code:1",
+      "Specialism code:10",
+      "Specialism code:11",
+      "Specialism code:12",
+      "Specialism code:13",
+      "Specialism code:14",
+      "Specialism code:15",
+      "Specialism code:2",
+      "Specialism code:3",
+      "Specialism code:4",
+      "Specialism code:5",
+      "Specialism code:6",
+      "Specialism code:7",
+      "Specialism code:8",
+      "Specialism code:9",
+      "Start date",
+      "Start date:1",
+      "Start date:10",
+      "Start date:11",
+      "Start date:12",
+      "Start date:13",
+      "Start date:14",
+      "Start date:15",
+      "Start date:2",
+      "Start date:3",
+      "Start date:4",
+      "Start date:5",
+      "Start date:6",
+      "Start date:7",
+      "Start date:8",
+      "Start date:9",
+      "Treatment code",
+      "Treatment code:1",
+      "Treatment code:10",
+      "Treatment code:11",
+      "Treatment code:12",
+      "Treatment code:13",
+      "Treatment code:14",
+      "Treatment code:15",
+      "Treatment code:2",
+      "Treatment code:3",
+      "Treatment code:4",
+      "Treatment code:5",
+      "Treatment code:6",
+      "Treatment code:7",
+      "Treatment code:8",
+      "Treatment code:9",
+      "concept:name"
+    ],
+    "event_level_keys": [
+      "Activity code",
+      "Number of executions",
+      "Producer code",
+      "Section",
+      "Specialism code",
+      "concept:name",
+      "lifecycle:transition",
+      "org:group",
+      "time:timestamp"
+    ]
+  },
+  "activity_field": {
+    "concept:name": {
+      "unique_count": 624,
+      "top_20": [
+        [
+          "aanname laboratoriumonderzoek",
+          15353
+        ],
+        [
+          "ligdagen - alle spec.beh.kinderg.-reval.",
+          10897
+        ],
+        [
+          "190205 klasse 3b        a205",
+          9351
+        ],
+        [
+          "ordertarief",
+          9008
+        ],
+        [
+          "190101 bovenreg.toesl.  a101",
+          6241
+        ],
+        [
+          "vervolgconsult poliklinisch",
+          5239
+        ],
+        [
+          "kalium potentiometrisch",
+          4328
+        ],
+        [
+          "natrium vlamfotometrisch",
+          4304
+        ],
+        [
+          "hemoglobine foto-elektrisch",
+          4275
+        ],
+        [
+          "creatinine",
+          3955
+        ],
+        [
+          "leukocyten tellen elektronisch",
+          2968
+        ],
+        [
+          "trombocyten tellen - elektronisch",
+          2724
+        ],
+        [
+          "differentiele telling automatisch",
+          2370
+        ],
+        [
+          "administratief tarief       - eerste pol",
+          2171
+        ],
+        [
+          "190021 klinische opname a002",
+          2118
+        ],
+        [
+          "calcium",
+          2042
+        ],
+        [
+          "glucose",
+          1950
+        ],
+        [
+          "kruisproef volledig -drie methoden-",
+          1705
+        ],
+        [
+          "haemoglobine foto-electrisch - spoed",
+          1676
+        ],
+        [
+          "ureum",
+          1643
+        ]
+      ]
+    },
+    "Activity code (if present)": {
+      "unique_count": 675,
+      "top_20": [
+        [
+          "370000",
+          15353
+        ],
+        [
+          "40014",
+          10897
+        ],
+        [
+          "613000",
+          9351
+        ],
+        [
+          "379999",
+          9008
+        ],
+        [
+          "614400",
+          6241
+        ],
+        [
+          "411100",
+          5239
+        ],
+        [
+          "370443",
+          4326
+        ],
+        [
+          "370407.0",
+          4275
+        ],
+        [
+          "370442",
+          4255
+        ],
+        [
+          "370419",
+          3899
+        ],
+        [
+          "370712B",
+          2968
+        ],
+        [
+          "370715A",
+          2724
+        ],
+        [
+          "370701",
+          2370
+        ],
+        [
+          "419100",
+          2171
+        ],
+        [
+          "610001",
+          2118
+        ],
+        [
+          "377498A",
+          2042
+        ],
+        [
+          "370402",
+          1950
+        ],
+        [
+          "375075",
+          1705
+        ],
+        [
+          "370701S",
+          1676
+        ],
+        [
+          "370403",
+          1618
+        ]
+      ]
+    }
+  },
+  "timestamp_field_time:timestamp": {
+    "present_count": 150291,
+    "missing_count": 0,
+    "unparseable_count": 0,
+    "min_timestamp": "2005-01-03T00:00:00+01:00",
+    "max_timestamp": "2008-03-20T00:00:00+01:00"
+  },
+  "missing_value_stats_per_event_key": {
+    "org:group": {
+      "present_count": 150275,
+      "missing_count": 16,
+      "fill_rate_pct": 99.99
+    },
+    "Number of executions": {
+      "present_count": 150291,
+      "missing_count": 0,
+      "fill_rate_pct": 100.0
+    },
+    "Specialism code": {
+      "present_count": 150291,
+      "missing_count": 0,
+      "fill_rate_pct": 100.0
+    },
+    "concept:name": {
+      "present_count": 150291,
+      "missing_count": 0,
+      "fill_rate_pct": 100.0
+    },
+    "Producer code": {
+      "present_count": 150291,
+      "missing_count": 0,
+      "fill_rate_pct": 100.0
+    },
+    "Section": {
+      "present_count": 150275,
+      "missing_count": 16,
+      "fill_rate_pct": 99.99
+    },
+    "Activity code": {
+      "present_count": 150291,
+      "missing_count": 0,
+      "fill_rate_pct": 100.0
+    },
+    "time:timestamp": {
+      "present_count": 150291,
+      "missing_count": 0,
+      "fill_rate_pct": 100.0
+    },
+    "lifecycle:transition": {
+      "present_count": 150291,
+      "missing_count": 0,
+      "fill_rate_pct": 100.0
+    }
+  },
+  "sample": [
+    {
+      "trace_attrs": {
+        "End date": "2006-01-04T23:45:36.000+01:00",
+        "Age": "33",
+        "Treatment code:2": "23",
+        "Treatment code:1": "13",
+        "Diagnosis code:2": "106",
+        "Specialism code": "7",
+        "Diagnosis code:1": "106",
+        "Treatment code": "103",
+        "Diagnosis:2": "Gynaecologische tumoren",
+        "Diagnosis:1": "Gynaecologische tumoren",
+        "Diagnosis": "maligniteit cervix",
+        "Diagnosis Treatment Combination ID": "181229",
+        "Start date": "2005-01-05T00:14:24.000+01:00",
+        "Diagnosis Treatment Combination ID:2": "376908",
+        "Diagnosis code": "M13",
+        "Diagnosis Treatment Combination ID:1": "376907",
+        "concept:name": "00000000",
+        "Start date:1": "2005-01-03T00:14:24.000+01:00",
+        "End date:1": "2005-01-29T23:45:36.000+01:00",
+        "End date:2": "2005-01-29T23:45:36.000+01:00",
+        "Specialism code:1": "61",
+        "Start date:2": "2005-01-03T00:14:24.000+01:00",
+        "Specialism code:2": "61"
+      },
+      "events": [
+        {
+          "org:group": "Radiotherapy",
+          "Number of executions": "1",
+          "Specialism code": "61",
+          "concept:name": "1e consult poliklinisch",
+          "Producer code": "SRTH",
+          "Section": "Section 5",
+          "Activity code": "410100",
+          "time:timestamp": "2005-01-03T00:00:00.000+01:00",
+          "lifecycle:transition": "complete"
+        },
+        {
+          "org:group": "Radiotherapy",
+          "Number of executions": "1",
+          "Specialism code": "61",
+          "concept:name": "administratief tarief       - eerste pol",
+          "Producer code": "SRTH",
+          "Section": "Section 5",
+          "Activity code": "419100",
+          "time:timestamp": "2005-01-03T00:00:00.000+01:00",
+          "lifecycle:transition": "complete"
+        },
+        {
+          "org:group": "Nursing ward",
+          "Number of executions": "1",
+          "Specialism code": "7",
+          "concept:name": "verlosk.-gynaec. korte kaart kosten-out",
+          "Producer code": "SGEH",
+          "Section": "Section 2",
+          "Activity code": "10107",
+          "time:timestamp": "2005-01-05T00:00:00.000+01:00",
+          "lifecycle:transition": "complete"
+        }
+      ],
+      "total_events_in_trace": 75
+    },
+    {
+      "trace_attrs": {
+        "End date": "2005-01-25T23:45:36.000+01:00",
+        "Treatment code:2": "101",
+        "Diagnosis code:2": "M13",
+        "Treatment code:1": "103",
+        "Specialism code": "13",
+        "Diagnosis code:1": "M13",
+        "Treatment code": "3101",
+        "Age:1": "39",
+        "Age:2": "39",
+        "Diagnosis:2": "maligniteit cervix",
+        "Diagnosis:1": "maligniteit cervix",
+        "Diagnosis": "maligniteit cervix",
+        "Diagnosis Treatment Combination ID": "152047",
+        "Start date": "2005-01-03T00:14:24.000+01:00",
+        "Diagnosis code": "822",
+        "Diagnosis Treatment Combination ID:2": "379687",
+        "Diagnosis Treatment Combination ID:1": "153637",
+        "concept:name": "00000001",
+        "Start date:1": "2005-01-06T00:14:24.000+01:00",
+        "End date:1": "2006-01-05T23:45:36.000+01:00",
+        "End date:2": "2006-01-20T23:45:36.000+01:00",
+        "Specialism code:1": "7",
+        "Specialism code:2": "7",
+        "Start date:2": "2005-01-21T00:14:24.000+01:00"
+      },
+      "events": [
+        {
+          "org:group": "Internal Specialisms clinic",
+          "Number of executions": "1",
+          "Specialism code": "13",
+          "concept:name": "inwend.geneesk.  korte kaart kosten-out",
+          "Producer code": "SIOG",
+          "Section": "Section 1",
+          "Activity code": "10113",
+          "time:timestamp": "2005-01-03T00:00:00.000+01:00",
+          "lifecycle:transition": "complete"
+        },
+        {
+          "org:group": "Internal Specialisms clinic",
+          "Number of executions": "1",
+          "Specialism code": "13",
+          "concept:name": "1e consult poliklinisch",
+          "Producer code": "SIOG",
+          "Section": "Section 1",
+          "Activity code": "410100",
+          "time:timestamp": "2005-01-03T00:00:00.000+01:00",
+          "lifecycle:transition": "complete"
+        },
+        {
+          "org:group": "Internal Specialisms clinic",
+          "Number of executions": "1",
+          "Specialism code": "13",
+          "concept:name": "administratief tarief       - eerste pol",
+          "Producer code": "SIOG",
+          "Section": "Section 1",
+          "Activity code": "419100",
+          "time:timestamp": "2005-01-03T00:00:00.000+01:00",
+          "lifecycle:transition": "complete"
+        }
+      ],
+      "total_events_in_trace": 239
+    }
+  ]
+}

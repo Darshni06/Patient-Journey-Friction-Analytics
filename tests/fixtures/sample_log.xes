@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log xes.version="1.0" xmlns="http://www.xes-standard.org">
+  <trace>
+    <string key="concept:name" value="patient_001"/>
+    <string key="Diagnosis" value="test diagnosis"/>
+    <event>
+      <string key="concept:name" value="Registration"/>
+      <string key="org:group" value="Nursing ward"/>
+      <string key="Section" value="Section 2"/>
+      <string key="lifecycle:transition" value="complete"/>
+      <int key="Number of executions" value="1"/>
+      <date key="time:timestamp" value="2005-01-03T09:00:00.000+01:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="1e consult poliklinisch"/>
+      <string key="org:group" value="Obstetrics &amp; Gynaecology clinic"/>
+      <string key="Section" value="Section 2"/>
+      <string key="lifecycle:transition" value="complete"/>
+      <int key="Number of executions" value="1"/>
+      <date key="time:timestamp" value="2005-01-03T09:15:00.000+01:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="administratief tarief - eerste pol"/>
+      <string key="org:group" value="Obstetrics &amp; Gynaecology clinic"/>
+      <string key="Section" value="Section 2"/>
+      <string key="lifecycle:transition" value="complete"/>
+      <int key="Number of executions" value="1"/>
+      <date key="time:timestamp" value="2005-01-03T09:16:00.000+01:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="kalium potentiometrisch"/>
+      <string key="org:group" value="General Lab Clinical Chemistry"/>
+      <string key="Section" value="Sectoin 7"/>
+      <string key="lifecycle:transition" value="complete"/>
+      <int key="Number of executions" value="1"/>
+      <date key="time:timestamp" value="2005-01-05T08:00:00.000+01:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="patient_002"/>
+    <event>
+      <string key="concept:name" value="Registration"/>
+      <string key="org:group" value="Nursing ward"/>
+      <string key="Section" value="Section 4"/>
+      <string key="lifecycle:transition" value="complete"/>
+      <int key="Number of executions" value="1"/>
+      <date key="time:timestamp" value="2006-02-01T00:00:00.000+01:00"/>
+    </event>
+  </trace>
+</log>
