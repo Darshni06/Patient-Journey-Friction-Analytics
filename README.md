@@ -116,7 +116,6 @@ patient-journey-friction/
 ├── configs/config.yaml    # every locked threshold, in one place
 ├── scripts/               # standalone inspection/diagnostic scripts
 ├── docs/PROJECT_DOCUMENTATION.md  # full project record - see this for everything
-├── DEVIATIONS_FROM_PROMPT.md      # every methodology decision, with evidence
 ├── run_pipeline.py
 └── requirements.txt
 ```
@@ -193,11 +192,8 @@ complaints/satisfaction data, learned weighting, multi-hospital extension. See
 
 ## Further reading
 
-- [`docs/PROJECT_DOCUMENTATION.md`](docs/PROJECT_DOCUMENTATION.md) — the complete
+- [`docs/dPROJECT_DOCUMENTATION.m`](docs/PROJECT_DOCUMENTATION.md) — the complete
   project record: problem statement, motivation, exact definitions, architecture,
   every technology and why, problems encountered and how they were solved, current
   results, what's implemented vs. planned, research questions, presentation scripts,
   viva Q&A, and a plain-language explanation.
-- [`DEVIATIONS_FROM_PROMPT.md`](DEVIATIONS_FROM_PROMPT.md) — every place the
-  implementation diverges from an initial literal specification, with the evidence
-  and reasoning behind each decision.
