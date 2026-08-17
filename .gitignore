@@ -25,3 +25,5 @@ neo4j_data/
 # OS
 .DS_Store
 Thumbs.db
+
+other_files/
